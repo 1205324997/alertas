@@ -1,11 +1,9 @@
-<!-- Contenedor principal -->
 <div class="container">
   <!-- Sidebar (Menú Lateral) -->
   <div class="sidebar">
-      <!-- Menú con botones -->
     <ul class="menu">
       <li><button (click)="toggleProducts()">Productos</button></li>
-      <li><button (click)="navigateToMessages()">Mensajes</button></li>
+      <li><button (click)="toggleMensajes()">Mensajes</button></li>
       <li><button (click)="navigateToSettings()">Configuraciones</button></li>
     </ul>
   </div>
@@ -23,6 +21,17 @@
         <li *ngFor="let product of products">
           <h4>{{ product.name }}</h4>
           <p>Precio: ${{ product.price }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Mostrar la lista de mensajes solo cuando showmensajes sea true -->
+    <div *ngIf="showmensajes" class="messages">
+      <h3>Lista de Mensajes</h3>
+      <ul>
+        <li *ngFor="let mensaje of mensajes">
+          <h4>{{ mensaje.name }}</h4>
+          <p>{{ mensaje.content }}</p>
         </li>
       </ul>
     </div>
