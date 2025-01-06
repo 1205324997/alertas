@@ -27,6 +27,9 @@ export class RegisterComponent {
   }
 
   onSubmit(): void {
+    // Marcar todos los campos como tocados para activar la validación
+    this.registerForm.markAllAsTouched();
+
     if (this.registerForm.valid) {
       const { email, password, confirmPassword, name, username } = this.registerForm.value;
 
@@ -35,13 +38,12 @@ export class RegisterComponent {
         return;
       }
 
-      // Crea un nuevo usuario con correo y contraseña usando Firebase Authentication
+      // Lógica para registrar al usuario en Firebase
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
           console.log('Usuario registrado exitosamente:', user);
-
-          this.router.navigate(['/login']); // Redirige a la página de inicio de sesión
+          this.router.navigate(['/login']); // Redirigir a la página de inicio de sesión
         })
         .catch((error) => {
           console.error('Error al registrar usuario:', error);

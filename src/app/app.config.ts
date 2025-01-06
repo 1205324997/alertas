@@ -1,14 +1,9 @@
-import { ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
+
 import { routes } from './app.routes';
-import { provideHttpClient } from '@angular/common/http';
-import { importProvidersFrom } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideRouter(routes), // Proveer rutas de la aplicación
-    provideHttpClient(), // Opcional: si usas HTTP
-    importProvidersFrom(ReactiveFormsModule), // Proveer ReactiveFormsModule globalmente
-  ],
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration(withEventReplay())]
 };

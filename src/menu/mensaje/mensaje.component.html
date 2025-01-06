@@ -1,0 +1,10 @@
+<div *ngIf="showmensajes" class="messages">
+    <h3>Mensajes</h3>
+    <ul>
+      <li *ngFor="let product of mensaje">
+        <h4>{{ product.name }}</h4>
+        <p>Precio: ${{ product.price }}</p>
+      </li>
+    </ul>
+  </div>
+  

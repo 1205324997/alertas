@@ -1,0 +1,102 @@
+/* Contenedor principal */
+.container {
+  display: flex;
+  position: relative;
+  margin-top: 20px;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #070c20;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background-image: url('../image/logo.png');
+  background-size: 100px auto; /* Ajusta el ancho de la imagen y mantiene proporción */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center 20px; 
+}
+
+
+
+/* Estilo del menú de navegación */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 50%;
+}
+
+/* Estilo de cada elemento del menú */
+.menu li {
+  margin: 20px 0;
+}
+
+.menu li button {
+  padding: 10px 20px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.menu li button:hover {
+  background-color: #0056b3;
+}
+
+/* Contenido principal */
+.content {
+  margin-left: -350px;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+
+.content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.content button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.content button:hover {
+  background-color: #218838;
+}
+
+/* Botón de cerrar sesión */
+.logout-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #050526;
+  color: rgb(252, 252, 252);
+  font-size: 12px;
+  padding: 10px 20px;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2000;
+  border-radius: 5px;
+}
+
+.logout-btn .material-icons {
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+.logout-btn:hover {
+  background-color: #cc0000;
+  border-radius: 10px;
+}

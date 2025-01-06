@@ -1,1 +1,35 @@
-<p>home works!</p>
+<!-- Contenedor principal -->
+<div class="container">
+  <!-- Sidebar (Menú Lateral) -->
+  <div class="sidebar">
+      <!-- Menú con botones -->
+    <ul class="menu">
+      <li><button (click)="toggleProducts()">Productos</button></li>
+      <li><button (click)="navigateToMessages()">Mensajes</button></li>
+      <li><button (click)="navigateToSettings()">Configuraciones</button></li>
+    </ul>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="content">
+    <h2>Bienvenido a la página de ventas</h2>
+    <p>Verifica las últimas noticias y productos aquí.</p>
+    <button (click)="toggleProducts()">Ver ventas</button>
+
+    <!-- Mostrar la lista de productos solo cuando showProducts sea true -->
+    <div *ngIf="showProducts" class="products">
+      <h3>Lista de Productos</h3>
+      <ul>
+        <li *ngFor="let product of products">
+          <h4>{{ product.name }}</h4>
+          <p>Precio: ${{ product.price }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Botón de cerrar sesión -->
+  <button class="logout-btn" (click)="logout()">
+    Cerrar sesión
+  </button>
+</div>
