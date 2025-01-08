@@ -15,12 +15,10 @@
   left: 0;
   text-align: center;
   background-image: url('../image/logo.png');
-  background-size: 100px auto; /* Ajusta el ancho de la imagen y mantiene proporción */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: 100px auto; 
+  background-repeat: no-repeat; 
   background-position: center 20px; 
 }
-
-
 
 /* Estilo del menú de navegación */
 .menu {
@@ -55,7 +53,6 @@
   padding: 20px;
   flex-grow: 1;
 }
-
 
 .content h2 {
   font-size: 24px;

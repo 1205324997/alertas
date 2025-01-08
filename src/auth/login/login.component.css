@@ -1,9 +1,9 @@
-/* Contenedor principal del formulario */
+
 .login-container {
-  position: relative; /* Necesario para que el formulario se posicione sobre la imagen */
+  position: relative; 
   width: 100%;
   max-width: 600px;
-  background-color: rgba(199, 196, 196, 0.613); /* Fondo translúcido para el formulario */
+  background-color: rgba(199, 196, 196, 0.911); 
   padding: 40px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);

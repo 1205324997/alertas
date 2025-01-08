@@ -2,38 +2,43 @@
   <!-- Sidebar (Menú Lateral) -->
   <div class="sidebar">
     <ul class="menu">
-      <li><button (click)="toggleProducts()">Productos</button></li>
-      <li><button (click)="toggleMensajes()">Mensajes</button></li>
-      <li><button (click)="navigateToSettings()">Configuraciones</button></li>
+      <li><button (click)="toggleAlertas()">Alertas</button></li>
+      <li><button (click)="toggleEstadisticas()">Estadísticas</button></li>
+      <li><button (click)="toggleConfiguraciones()">Configuraciones</button></li>
     </ul>
   </div>
 
   <!-- Contenido principal -->
   <div class="content">
-    <h2>Bienvenido a la página de ventas</h2>
-    <p>Verifica las últimas noticias y productos aquí.</p>
-    <button (click)="toggleProducts()">Ver ventas</button>
+    <h2>Bienvenido a PYMES Shield</h2>
+    <p>Verifica las últimas notificaciones de tu cuenta.</p>
 
-    <!-- Mostrar la lista de productos solo cuando showProducts sea true -->
-    <div *ngIf="showProducts" class="products">
-      <h3>Lista de Productos</h3>
+    <!-- Mostrar las alertas solo cuando showAlertas sea true -->
+    <div *ngIf="showAlertas" class="alertas">
+      <h3>Lista de Alertas</h3>
       <ul>
-        <li *ngFor="let product of products">
-          <h4>{{ product.name }}</h4>
-          <p>Precio: ${{ product.price }}</p>
+        <li *ngFor="let alerta of alertas">
+          <h4>{{ alerta.name }}</h4>
+          <p>{{ alerta.content }}</p>
         </li>
       </ul>
     </div>
 
-    <!-- Mostrar la lista de mensajes solo cuando showmensajes sea true -->
-    <div *ngIf="showmensajes" class="messages">
-      <h3>Lista de Mensajes</h3>
+    <!-- Mostrar las estadísticas solo cuando showEstadisticas sea true -->
+    <div *ngIf="showEstadisticas" class="estadisticas">
+      <h3>Estadísticas</h3>
       <ul>
-        <li *ngFor="let mensaje of mensajes">
-          <h4>{{ mensaje.name }}</h4>
-          <p>{{ mensaje.content }}</p>
+        <li *ngFor="let estadistica of estadisticas">
+          <h4>{{ estadistica.name }}</h4>
+          <p>{{ estadistica.value }}</p>
         </li>
       </ul>
+    </div>
+
+    <!-- Mostrar configuraciones solo cuando showconfig sea true -->
+    <div *ngIf="showconfig" class="configuraciones">
+      <h3>Configuraciones</h3>
+      <p>Aquí puedes gestionar las configuraciones de tu cuenta.</p>
     </div>
   </div>
 
